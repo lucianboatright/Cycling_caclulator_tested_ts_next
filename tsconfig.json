@@ -37,7 +37,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/__tests__/cogs.test.js"  ],
   "exclude": [
     "node_modules",
     "dist",
