@@ -1,9 +1,9 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Cogs from '../src/components/cogs';
+import FrontCogs from '../src/components/frontCogs';
 
-const Home: NextPage = () => {
+const Home: Head = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Hello</div>
-      <Cogs />
+      <FrontCogs />
 
     </div>
   )
