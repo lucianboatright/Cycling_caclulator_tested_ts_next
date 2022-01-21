@@ -98,11 +98,22 @@ describe('testing RearShifter', () => {
   });
   it('testing RearShifterUp changes small cog up by 1', () => {
     render(<CogsComp />);
-    // const { getByTestId } = render(
-    //   <button onClick={rearShiftUp}>Shift Up</button>
-    // )
     fireEvent.click(screen.getByTestId('rearShifterUp'));
     const cogLarge = screen.getByTestId('small-cog-discription');
     expect(cogLarge).toHaveTextContent('17');
+  });
+  it('testing RearShifterUp can be changes 3 times = 19', () => {
+    render(<CogsComp />);
+    fireEvent.click(screen.getByTestId('rearShifterUp'));
+    fireEvent.click(screen.getByTestId('rearShifterUp'));
+    fireEvent.click(screen.getByTestId('rearShifterUp'));
+    const cogLarge = screen.getByTestId('small-cog-discription');
+    expect(cogLarge).toHaveTextContent('19');
+  });
+  it('testing RearShifterDown changes smallCog by 1', () => {
+    render(<CogsComp />);
+    fireEvent.click(screen.getByTestId('rearShifterDown'));
+    const cogLarge = screen.getByTestId('small-cog-discription');
+    expect(cogLarge).toHaveTextContent('15');
   });
 });
