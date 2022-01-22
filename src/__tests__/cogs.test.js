@@ -1,7 +1,5 @@
 import CogsComp from '@src/components/cogs';
 import { render, screen, fireEvent } from '@testing-library/react';
-// import Adapter from 'enzyme-adapter-react-16';
-// import { shallow, configure } from 'enzyme';
 
 describe('cogs test', () => {
   it('testing cog component renders', () => {
@@ -10,20 +8,6 @@ describe('cogs test', () => {
     expect(cogElement).toBeInTheDocument();
   });
 });
-
-// test("testing front cog < 50 returns 'going easy'", () => {
-//   render(<CogsComp />);
-//   const cogLarge = screen.getByTestId('front-cog-discription');
-//   expect(cogLarge).toHaveTextContent('Going Easy');
-// });
-
-// describe('tersting cog output', () => {
-//   it('testing opening state of cog is < 50', () => {
-//     render(<CogsComp />);
-//     const cogLarge = screen.getByTestId('cog-component');
-//     expect(cogLarge).toHaveTextContent('Going Easy');
-//   });
-// });
 
 describe('Testing front shifter for large chainring', () => {
   it('testing front cog starts at 50', () => {
@@ -69,19 +53,43 @@ describe('Testing front shifter for large chainring', () => {
     const cogLarge = screen.getByTestId('large-cog-discription');
     expect(cogLarge).toHaveTextContent('53');
   });
-  it('testing + shifter changes gear changed gear up once', () => {
+  it('testing - shifter changes gear changed gear up once', () => {
     render(<CogsComp />);
     fireEvent.click(screen.getByTestId('frontShifterDown'));
     const cogLarge = screen.getByTestId('large-cog-discription');
     expect(cogLarge).toHaveTextContent('49');
   });
-  it('testing + shifter DOWN three times returns 47', () => {
+  it('testing - shifter DOWN three times returns 47', () => {
     render(<CogsComp />);
     fireEvent.click(screen.getByTestId('frontShifterDown'));
     fireEvent.click(screen.getByTestId('frontShifterDown'));
     fireEvent.click(screen.getByTestId('frontShifterDown'));
     const cogLarge = screen.getByTestId('large-cog-discription');
     expect(cogLarge).toHaveTextContent('47');
+  });
+  it('testing - shifter tops out at 60', () => {
+    render(<CogsComp />);
+    fireEvent.click(screen.getByTestId('frontShifterDown'));
+    fireEvent.click(screen.getByTestId('frontShifterDown'));
+    fireEvent.click(screen.getByTestId('frontShifterDown'));
+    const cogLarge = screen.getByTestId('large-cog-discription');
+    expect(cogLarge).toHaveTextContent('47');
+  });
+  it('testing - shifter bottoms out at 24', () => {
+    render(<CogsComp />);
+    for (let i = 0; i < 26; i++) {
+      fireEvent.click(screen.getByTestId('frontShifterDown'));
+    }
+    const cogLarge = screen.getByTestId('large-cog-discription');
+    expect(cogLarge).toHaveTextContent('24');
+  });
+  it('testing - shifter bottoms out at 24', () => {
+    render(<CogsComp />);
+    for (let i = 0; i < 27; i++) {
+      fireEvent.click(screen.getByTestId('frontShifterDown'));
+    }
+    const cogLarge = screen.getByTestId('large-cog-discription');
+    expect(cogLarge).toHaveTextContent('24');
   });
 });
 

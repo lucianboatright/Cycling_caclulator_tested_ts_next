@@ -13,8 +13,12 @@ export default function Cogs() {
   const frontShiftDown = (event) => {
     console.log('Clicked Front DOWN');
     console.log(largeCog);
-    setLargeCog(largeCog - 1);
-  }
+    if (largeCog > 24) {
+      setLargeCog(largeCog - 1);
+    } else { 
+      setLargeCog(largeCog);
+    }
+  };
 
   const rearShiftDown = (event) => {
     console.log('Clicked Front DOWN');

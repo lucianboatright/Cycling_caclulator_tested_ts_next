@@ -20,4 +20,6 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Running tests
 
-run - npm jest
+run - npx jest
+
+setup enviorment - yarn dev
