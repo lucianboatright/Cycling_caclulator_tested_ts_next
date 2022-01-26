@@ -69,11 +69,11 @@ describe('Testing front shifter for large chainring', () => {
   });
   it('testing - shifter tops out at 60', () => {
     render(<CogsComp />);
-    fireEvent.click(screen.getByTestId('frontShifterDown'));
-    fireEvent.click(screen.getByTestId('frontShifterDown'));
-    fireEvent.click(screen.getByTestId('frontShifterDown'));
+    for (let i = 0; i < 12; i++) {
+      fireEvent.click(screen.getByTestId('frontShifterUp'));
+    }
     const cogLarge = screen.getByTestId('large-cog-discription');
-    expect(cogLarge).toHaveTextContent('47');
+    expect(cogLarge).toHaveTextContent('60');
   });
   it('testing - shifter bottoms out at 24', () => {
     render(<CogsComp />);
@@ -96,32 +96,48 @@ describe('Testing front shifter for large chainring', () => {
 describe('testing RearShifter', () => {
   it("testing small cog > 15 = top half'", () => {
     render(<CogsComp />);
-    const cogLarge = screen.getByTestId('small-cog-discription');
-    expect(cogLarge).toHaveTextContent('Top Half');
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('Top Half');
   });
   it('testing small starts at 15', () => {
     render(<CogsComp />);
-    const cogLarge = screen.getByTestId('small-cog-discription');
-    expect(cogLarge).toHaveTextContent('16');
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('16');
   });
   it('testing RearShifterUp changes small cog up by 1', () => {
     render(<CogsComp />);
     fireEvent.click(screen.getByTestId('rearShifterUp'));
-    const cogLarge = screen.getByTestId('small-cog-discription');
-    expect(cogLarge).toHaveTextContent('17');
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('17');
   });
   it('testing RearShifterUp can be changes 3 times = 19', () => {
     render(<CogsComp />);
     fireEvent.click(screen.getByTestId('rearShifterUp'));
     fireEvent.click(screen.getByTestId('rearShifterUp'));
     fireEvent.click(screen.getByTestId('rearShifterUp'));
-    const cogLarge = screen.getByTestId('small-cog-discription');
-    expect(cogLarge).toHaveTextContent('19');
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('19');
   });
   it('testing RearShifterDown changes smallCog by 1', () => {
     render(<CogsComp />);
     fireEvent.click(screen.getByTestId('rearShifterDown'));
-    const cogLarge = screen.getByTestId('small-cog-discription');
-    expect(cogLarge).toHaveTextContent('15');
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('15');
+  });
+  it('testing rear cog lower limit is 10', () => {
+    render(<CogsComp />);
+    for (let i = 0; i < 15; i++) {
+      fireEvent.click(screen.getByTestId('rearShifterDown'));
+    }
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('10');
+  });
+  it('test upper limit of rear cog is 46 teeth', () => {
+    render(<CogsComp />);
+    for (let i = 0; i < 32; i++) {
+      fireEvent.click(screen.getByTestId('rearShifterUp'));
+    }
+    const cogSmall = screen.getByTestId('small-cog-discription');
+    expect(cogSmall).toHaveTextContent('46');
   });
 });

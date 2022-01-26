@@ -5,14 +5,14 @@ export default function Cogs() {
   const [smallCog, setSmallCog] = React.useState<number>(16);
 
   const frontShiftUp = (event) => {
-    console.log('Clicked Front UP');
-    console.log(largeCog);
-    setLargeCog(largeCog + 1);
+    if (largeCog < 60) {
+      setLargeCog(largeCog + 1)
+    } else {
+      setLargeCog(largeCog)
+    }
   }
 
   const frontShiftDown = (event) => {
-    console.log('Clicked Front DOWN');
-    console.log(largeCog);
     if (largeCog > 24) {
       setLargeCog(largeCog - 1);
     } else { 
@@ -21,31 +21,41 @@ export default function Cogs() {
   };
 
   const rearShiftDown = (event) => {
-    console.log('Clicked Front DOWN');
-    console.log(smallCog);
-    setSmallCog(smallCog - 1);
+    if (smallCog > 10) {
+      setSmallCog(smallCog - 1);
+    }
   }
 
   const rearShiftUp = (event) => {
-    console.log('Clicked Front DOWN');
-    console.log(smallCog);
-    setSmallCog(smallCog + 1);
+    if (smallCog < 46) {
+      setSmallCog(smallCog + 1);
+    }
   }
 
   return (
     <div className="Cog-Component">
       <div data-testid="cog-component">
         <div data-testid="small-cog-discription">
+          <div>Small Cog</div>
           {smallCog < 15 ? <div>{smallCog} Bottom half</div> : <div>{smallCog} Top Half</div>}
-          <button data-testid="rearShifterUp" onClick={rearShiftUp}>Shift Up</button>
           <button data-testid="rearShifterDown" onClick={rearShiftDown}>Shift Down</button>
+          <button data-testid="rearShifterUp" onClick={rearShiftUp}>Shift Up</button>
         </div>
         <div data-testid="large-cog-discription">
+          <div>Large Cog</div>
           {largeCog < 50 ? <div>{largeCog} Going Easy</div> : <div>{largeCog} Pushing Hard</div>}
-          <button data-testid="frontShifterUp" onClick={frontShiftUp}>Shift Up</button>
           <button data-testid="frontShifterDown" onClick={frontShiftDown}>Shift Down</button>
+          <button data-testid="frontShifterUp" onClick={frontShiftUp}>Shift Up</button>
         </div>
-        <div>Large cog</div>
+      </div>
+      <div>
+        <label>Choose Wheel Size</label>
+        <select name="dog-names" id="dog-names">
+            <option value="700">Rigatoni</option>
+          <option value="dave">Dave</option>
+          <option value="pumpernickel">Pumpernickel</option>
+          <option value="reeses">Reeses</option>
+        </select>
       </div>
     </div>
   );

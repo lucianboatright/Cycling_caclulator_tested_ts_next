@@ -1,25 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project outline
+
+This is a project that is being built up using TDD at is core to build and develope the product.
+
+The goal is to create a simple speed caculator for cyuclist to show the users statistics basesd on the selected set up.
+
+Inputs:
+
+- Rear and Front cog size, change up or down by one.
+- Select Wheel and Tyre size.
+- Pedaling RPM
+
+Outputs:
+
+- Speed , Gear Ratios, cog sizes, wheel and tyre sizes
+
+## Technology
+
+I have used Typescript on a Next.js framework with Jest for testing.
+
+There were other potential testing frameworks that may be included later like Espresso but currently Jest is covering all required types from unit testing to UAT testing.
 
 ## Getting Started
 
-First, run the development server:
+Clone the Repo and then run the comands below
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+setup enviorment - $ yarn dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run tests - $ npx jest
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Planning
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Running tests
-
-run - npx jest
-
-setup enviorment - yarn dev
+![watchbox](/readmeImages/planningOne.jpg)
+![watchbox](/readmeImages/planningTwo.jpg)
