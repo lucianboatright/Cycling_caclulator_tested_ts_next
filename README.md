@@ -14,6 +14,17 @@ Outputs:
 
 - Speed , Gear Ratios, cog sizes, wheel and tyre sizes
 
+## Equations
+
+Gear Inches:
+Front cog / Rear cog x wheel sizer (inc tyre) = Gear Inches
+
+Gear Ratio:
+Front cog / Rear cog = Gear Ratio
+
+Speed:
+Tyre Cuircumferance(m) x Gear Ratio x RPM x 60(mins) = Km/h
+
 ## Technology
 
 I have used Typescript on a Next.js framework with Jest for testing.
@@ -31,5 +42,6 @@ Run tests - $ npx jest
 ## Planning
 
 <img src='readmeImages/planningOne.png' />
-![PlanningOne](./readmeImages/planningOne.png)
-![PlanningTwo](./readmeImages/planningTwo.png)
+<img src='readmeImages/planningTwo.png' />
+
+/_ eslint-enable _/
