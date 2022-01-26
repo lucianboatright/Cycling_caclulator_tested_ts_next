@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Cogs from '../src/components/cogs';
+import Details from '..src/components/details';
 import RearCogs from '../src/components/RearCogs';
 
 const Home: Head = () => {
@@ -14,6 +15,7 @@ const Home: Head = () => {
       </Head>
       <div>Hello</div>
       <Cogs />
+      <Details />
 
     </div>
   )

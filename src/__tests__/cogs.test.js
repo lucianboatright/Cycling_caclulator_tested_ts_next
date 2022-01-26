@@ -1,7 +1,7 @@
 import CogsComp from '@src/components/cogs';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-describe('cogs test', () => {
+describe('Testsing Components Mounted', () => {
   it('testing cog component renders', () => {
     render(<CogsComp />);
     const cogElement = screen.getByTestId('cog-component');
@@ -141,3 +141,11 @@ describe('testing RearShifter', () => {
     expect(cogSmall).toHaveTextContent('46');
   });
 });
+
+// describe('Testing Details Component', () => {
+//   // it('testing that rear cog number is shown and is changed when up or down', () => {
+//   //   const
+//   //   render(<CogsComp />);
+
+//   // })
+// })
