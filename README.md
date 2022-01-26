@@ -30,5 +30,5 @@ Run tests - $ npx jest
 
 ## Planning
 
-![watchbox](/readmeImages/planningOne.jpg)
-![watchbox](/readmeImages/planningTwo.jpg)
+![watchbox](./readmeImages/planningOne.jpg)
+![watchbox](../readmeImages/planningTwo.jpg)
