@@ -30,6 +30,6 @@ Run tests - $ npx jest
 
 ## Planning
 
-<img src='readmeImages/planningOne.jpeg' />
-![PlanningOne](./readmeImages/planningOne.jpg)
-![PlanningTwo](./readmeImages/planningTwo.jpg)
+<img src='readmeImages/planningOne.png' />
+![PlanningOne](./readmeImages/planningOne.png)
+![PlanningTwo](./readmeImages/planningTwo.png)
