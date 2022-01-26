@@ -30,5 +30,6 @@ Run tests - $ npx jest
 
 ## Planning
 
-![watchbox](cog-calculator/readmeImages/planningOne.jpg)
-![watchbox](cog-calculator/readmeImages/planningTwo.jpg)
+<img src='readmeImages/planningOne.jpeg' />
+![PlanningOne](readmeImages/planningOne.jpg)
+![PlanningTwo](readmeImages/planningTwo.jpg)
