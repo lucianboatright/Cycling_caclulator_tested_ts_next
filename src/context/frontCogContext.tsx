@@ -12,16 +12,6 @@ const CounterContexxt = createContext<
 
 function counterReducer(state: State, action: Action) {
     switch(action) {
-        case 'rearShiftUp': {
-            return {
-                rearCog: state.rearCog + 1
-            }
-        }
-        case 'rearShiftDown': {
-            return {
-                rearCog: state.rearCog - 1
-            }
-        }
         case 'frontShiftUp': 
             return {
                 frontCog: state.frontCog + 1

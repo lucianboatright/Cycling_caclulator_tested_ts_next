@@ -1,9 +1,9 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Cogs from '../src/components/cogs';
+import Cogs from '../src/components/rearCogs';
 import Details from '../src/components/details';
-import { useCounter } from '@src/context'
+import { useCounter } from '@src/context/rearCogContext'
 
 const Home: Head = () => {
   const { state, dispatch } = useCounter()

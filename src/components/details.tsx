@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { State } from '@src/context';
+import type { State } from '@src/context/rearCogContext';
 
 export default function Details({rearCog, frontCog}: State) {
   return (
