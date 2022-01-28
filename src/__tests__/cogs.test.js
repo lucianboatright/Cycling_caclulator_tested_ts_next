@@ -1,4 +1,4 @@
-import CogsComp from '@src/components/cogs';
+import CogsComp from '@src/components/rearCogs';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 describe('Testsing Components Mounted', () => {

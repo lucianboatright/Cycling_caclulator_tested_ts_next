@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import type { State } from '@src/context';
+import type { State } from '@src/context/RearCogContext';
 
-export default function Details({count}: State) {
+export default function Details({rearCog}: State) {
   return (
     <div className="Cog-Component">
       <div data-testid="details-component">
-        Details {count}
+        Details {rearCog}
       </div>
     </div>
   );
