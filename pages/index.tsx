@@ -6,7 +6,7 @@ import Details from '../src/components/details';
 import { useCounter } from '@src/context/rearCogContext'
 
 const Home: Head = () => {
-  const { stateRear, dispatchRear } = useCounter()
+  const { stateRear, stateFront, dispatchRear, dispatchFront } = useCounter()
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +15,8 @@ const Home: Head = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Hello</div>
-      <Cogs handler={dispatchRear} {...stateRear} />
-      <Details {...stateRear} />
+      <Cogs handlerR={dispatchRear} handlerF={dispatchFront} {...stateRear} {...stateFront} />
+      <Details {...stateRear} {...stateFront} />
 
     </div>
   )
