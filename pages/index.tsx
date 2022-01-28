@@ -15,7 +15,7 @@ const Home: Head = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Hello</div>
-      <Cogs handler={dispatch} />
+      <Cogs handler={dispatch} {...state} />
       <Details {...state} />
 
     </div>

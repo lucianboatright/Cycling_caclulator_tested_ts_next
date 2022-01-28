@@ -1,8 +1,8 @@
 import { createContext, useReducer, useContext } from "react"
 
-const defaultState = { count: 0 }
+const defaultState = { rearCog: 16, frontCog: 50 }
 
-export type Action = 'increment' | 'decrement'
+export type Action = 'rearShiftUp' | 'rearShiftDown' | 'frontShiftUp' | 'frontShiftDown'
 export type Dispatch = (action: Action) => void
 export type State = typeof defaultState
 
@@ -12,13 +12,23 @@ const CounterContexxt = createContext<
 
 function counterReducer(state: State, action: Action) {
     switch(action) {
-        case 'increment':
+        case 'rearShiftUp': {
             return {
-                count: state.count + 1
+                rearCog: state.rearCog + 1
             }
-        case 'decrement': {
+        }
+        case 'rearShiftDown': {
             return {
-                count: state.count - 1
+                rearCog: state.rearCog - 1
+            }
+        }
+        case 'frontShiftUp': 
+            return {
+                frontCog: state.frontCog + 1
+            }
+        case 'frontShiftDown': {
+            return {
+                frontCog: state.frontCog - 1
             }
         }
     }
