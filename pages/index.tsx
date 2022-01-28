@@ -2,10 +2,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Cogs from '../src/components/cogs';
-import Details from '..src/components/details';
-import RearCogs from '../src/components/RearCogs';
+import Details from '../src/components/details';
+import { useCounter } from '@src/context'
 
 const Home: Head = () => {
+  const { state, dispatch } = useCounter()
   return (
     <div className={styles.container}>
       <Head>
@@ -14,8 +15,8 @@ const Home: Head = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Hello</div>
-      <Cogs />
-      <Details />
+      <Cogs handler={dispatch} />
+      <Details {...state} />
 
     </div>
   )
