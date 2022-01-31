@@ -1,4 +1,5 @@
 import CogsComp from '@src/components/cogs';
+// import Home from '../../pages/index';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 describe('Testsing Components Mounted', () => {
@@ -146,6 +147,5 @@ describe('testing RearShifter', () => {
 //   // it('testing that rear cog number is shown and is changed when up or down', () => {
 //   //   const
 //   //   render(<CogsComp />);
-
 //   // })
 // })

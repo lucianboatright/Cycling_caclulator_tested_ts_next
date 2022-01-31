@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from "react"
 
-const defaultState = { rearCog: 16, frontCog: 50 }
+const defaultState = { rearCog: 14, frontCog: 50 }
 
 export type Action = 'rearShiftUp' | 'rearShiftDown' | 'frontShiftUp' | 'frontShiftDown'
 export type Dispatch = (action: Action) => void
@@ -12,13 +12,27 @@ const CounterContexxt = createContext<
 
 function counterReducer(state: State, action: Action) {
     switch(action) {
+        case 'rearShiftUp': {
+            return {
+                rearCog: state.rearCog + 1 < 47 ? state.rearCog + 1 : state.rearCog,
+                frontCog: state.frontCog
+            }
+        }
+        case 'rearShiftDown': {
+            return {
+                rearCog: state.rearCog - 1 > 10 ? state.rearCog - 1 : state.rearCog,
+                frontCog: state.frontCog
+            }
+        }
         case 'frontShiftUp': 
             return {
-                frontCog: state.frontCog + 1
+                frontCog: state.frontCog + 1 < 60 ? state.frontCog + 1 : state.frontCog,
+                rearCog: state.rearCog
             }
         case 'frontShiftDown': {
             return {
-                frontCog: state.frontCog - 1
+                frontCog: state.frontCog - 1 > 10 ? state.frontCog - 1 : state.frontCog,
+                rearCog: state.rearCog
             }
         }
     }

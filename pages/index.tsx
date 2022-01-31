@@ -1,12 +1,12 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Cogs from '../src/components/rearCogs';
+// import styles from '../styles/Home.module.css';
+import Cogs from '../src/components/cogs';
 import Details from '../src/components/details';
-import { useCounter } from '@src/context/rearCogContext'
+import { useCounter } from '@src/context/CogsContext'
 
 const Home: Head = () => {
-  const { stateRear, stateFront, dispatchRear, dispatchFront } = useCounter()
+  const { state, dispatch } = useCounter()
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +15,8 @@ const Home: Head = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Hello</div>
-      <Cogs handlerR={dispatchRear} handlerF={dispatchFront} {...stateRear} {...stateFront} />
-      <Details {...stateRear} {...stateFront} />
+      <Cogs handler={dispatch} {...state} />
+      <Details {...state} />
 
     </div>
   )
