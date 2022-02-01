@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { Dispatch } from "@src/context/CogsContext";
 import type { State } from "@src/context/CogsContext";
 
-export default function CogsComp({handler, rearCog, frontCog}: {handler: Dispatch}, {count: State}) {
+export default function Cogs({handler, rearCog, frontCog}: {handler: Dispatch}, {count: State}) {
   return (
     <div className="Cog-Component">
       <div data-testid="cog-component">
