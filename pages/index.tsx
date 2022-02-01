@@ -5,7 +5,7 @@ import Cogs from '../src/components/cogs';
 import Details from '../src/components/details';
 import { useCounter } from '@src/context/CogsContext'
 
-const Home: FC = () => {
+const Home: Head = () => {
   const { state, dispatch } = useCounter()
   return (
     <div>
