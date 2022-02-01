@@ -1,20 +1,21 @@
-import { createContext, useContext } from "react";
+import * as React from "react";
 
-export type CogGlobalContent = {
-    frontCog: number
-    rearCog: number
-    setFrontCog: (c:number) => void
-    setRearCog: (c:number) => void
+export interface CogGlobalContent {
+    state: {
+        frontCog: number;
+        // rearCog: number;
+    };
+    setStateFront: Function;
 }
 
-export const CogGlobalContext = createContext<CogGlobalContent> ({
-    frontCog: 1,
-    rearCog: 1,
-    setFrontCog: () => {},
-    setRearCog: () => {},
+export const CogGlobalContext = React.createContext({
+    state: { frontCog: 0 },
+    setStateFront: (state: Object) => {
+        console.log("Dummy Function");
+    }
 })
 
-export const useCogGlobalContext = () => useContext(CogGlobalContext)
+// export const useCogGlobalContext = () => useContext(CogGlobalContext)
 
 
 
