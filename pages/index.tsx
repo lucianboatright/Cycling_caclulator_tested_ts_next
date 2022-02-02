@@ -3,11 +3,10 @@ import Head from 'next/head';
 // import styles from '../styles/Home.module.css';
 import Cogs from '../src/components/cogs';
 import Details from '../src/components/details';
-import { CogGlobalContext } from '@src/context/CogsContext'
-import { useState } from 'react';
+import { useCounter } from '@src/context/CogsContext'
 
 const Home: Head = () => {
-  const [frontCog, rearCog, setRearCog, setForntCog] = useState<string>()
+  const { state, dispatch } = useCounter()
   return (
     <div>
       <Head>
